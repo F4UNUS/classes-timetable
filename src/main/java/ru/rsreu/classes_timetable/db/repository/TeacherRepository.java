@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface TeacherRepository extends CrudRepository<TeacherEntity, Long> {
     List<TeacherEntity> findByLessonsDayOfWeekAndLessonsAuditory(Day day, int auditory);
+    List<TeacherEntity> findByLessonsDayOfWeekIsNot(Day day);
 }

@@ -6,6 +6,8 @@ import ru.rsreu.classes_timetable.admin.model.Lesson;
 import ru.rsreu.classes_timetable.db.entity.LessonEntity;
 import ru.rsreu.classes_timetable.db.repository.TeacherRepository;
 
+import java.util.Objects;
+
 @Component
 public class LessonToLessonEntityConverter implements Converter<Lesson, LessonEntity> {
 
@@ -23,9 +25,11 @@ public class LessonToLessonEntityConverter implements Converter<Lesson, LessonEn
         target.setDayOfWeek(source.day());
         target.setTime(source.time());
         target.setAuditory(source.auditory());
-        teacherRepository
-                .findById(source.teacherId())
-                .ifPresent(target::setTeacher);
+        if (Objects.nonNull(source.teacherId())) {
+            teacherRepository
+                    .findById(source.teacherId())
+                    .ifPresent(target::setTeacher);
+        }
         return target;
     }
 

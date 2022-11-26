@@ -1,12 +1,12 @@
-package ru.rsreu.classes_timetable.controller;
+package ru.rsreu.classes_timetable.teacher.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.rsreu.classes_timetable.db.entity.TeacherEntity;
 import ru.rsreu.classes_timetable.model.Day;
-import ru.rsreu.classes_timetable.service.TeacherService;
+import ru.rsreu.classes_timetable.teacher.dto.Teacher;
+import ru.rsreu.classes_timetable.teacher.service.TeacherService;
 
 import java.util.List;
 
@@ -21,8 +21,13 @@ public class TeacherController {
     }
 
     @GetMapping
-    List<TeacherEntity> getTeachers(@RequestParam Day day, @RequestParam int auditory) {
-        return teacherService.getTeachers(day, auditory);
+    List<Teacher> getTeachers(@RequestParam Day day, @RequestParam int auditory) {
+        return teacherService.getTeachersWhereDayIsNot(day, auditory);
+    }
+
+    @GetMapping(path = "/day-not")
+    List<Teacher> getTeachersDayIsNot(@RequestParam Day day) {
+        return teacherService.getTeachersWhereDayIsNot(day);
     }
 
 }
