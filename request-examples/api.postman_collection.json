@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "f7bac3c3-818c-4c67-9837-8fcb8954f832",
+		"name": "api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get teachers by day and auditory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/teachers?day=MO&auditory=443",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"teachers"
+					],
+					"query": [
+						{
+							"key": "day",
+							"value": "MO"
+						},
+						{
+							"key": "auditory",
+							"value": "443"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get teachers where day not",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/teachers/day-not?day=TU",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"teachers",
+						"day-not"
+					],
+					"query": [
+						{
+							"key": "day",
+							"value": "TU"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get days where lesson count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/days?lessonsCount=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"days"
+					],
+					"query": [
+						{
+							"key": "lessonsCount",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get days by auditory count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/days?auditoryCount=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"days"
+					],
+					"query": [
+						{
+							"key": "auditoryCount",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

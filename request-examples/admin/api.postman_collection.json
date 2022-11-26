@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "4ee25ded-92eb-4fa5-931b-b1494e9f145b",
+		"name": "lessons",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert lesson",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 12,\n    \"name\": \"Ин. яз.\",\n    \"auditory\": 443,\n    \"day\": \"MO\",\n    \"time\": \"20:00:00\",\n    \"studentsCount\": 12\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/lessons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"lessons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get lesson",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin/lessons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"lessons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update lesson",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"name\": \"Рус. яз.\",\n    \"auditory\": 414,\n    \"day\": \"MO\",\n    \"time\": \"14:00:00\",\n    \"studentsCount\": 15,\n    \"teacherId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/lessons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"lessons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete lesson",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin/lessons/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"lessons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
