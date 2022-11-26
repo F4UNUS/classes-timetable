@@ -3,7 +3,7 @@ package ru.rsreu.classes_timetable.admin.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import ru.rsreu.classes_timetable.model.Day;
 
-import java.util.List;
+import java.time.LocalTime;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public record Lesson(
@@ -11,6 +11,7 @@ public record Lesson(
         String name,
         int auditory,
         Day day,
-        List<Long> teachersIds,
-        int studentsCount
+        LocalTime time,
+        int studentsCount,
+        Long teacherId
         ) {}

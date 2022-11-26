@@ -5,5 +5,5 @@ import java.util.List;
 public record Teacher (
         Long id,
         String fullName,
-        List<Long> lessonsIds
+        List<Long> lessonsId
 ) {}

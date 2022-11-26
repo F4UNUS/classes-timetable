@@ -23,11 +23,11 @@ public class TeacherToTeacherEntityConverter implements Converter<Teacher, Teach
 
     @Override
     public TeacherEntity convert(Teacher source) {
-        TeacherEntity teacher = new TeacherEntity();
-        teacher.setId(source.id());
-        teacher.setFullName(source.fullName());
-        teacher.setLessons(findLessons(source.lessonsIds()));
-        return teacher;
+        TeacherEntity target = new TeacherEntity();
+        target.setId(source.id());
+        target.setFullName(source.fullName());
+        target.setLessons(findLessons(source.lessonsId()));
+        return target;
     }
 
     public List<LessonEntity> findLessons(List<Long> ids) {

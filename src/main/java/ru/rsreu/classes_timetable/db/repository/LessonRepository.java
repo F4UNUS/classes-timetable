@@ -6,4 +6,5 @@ import ru.rsreu.classes_timetable.db.entity.LessonEntity;
 
 @Repository
 public interface LessonRepository extends CrudRepository<LessonEntity, Long> {
+
 }

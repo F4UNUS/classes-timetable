@@ -12,9 +12,7 @@ import java.util.List;
 public class TeacherEntityToTeacherConverter implements Converter<TeacherEntity, Teacher> {
     @Override
     public Teacher convert(TeacherEntity source) {
-        List<Long> lessonsIds = source.getLessons().stream()
-                .map(LessonEntity::getId)
-                .toList();
-        return new Teacher(source.getId(), source.getFullName(), lessonsIds);
+        List<Long> lessonsId = source.getLessons().stream().map(LessonEntity::getId).toList();
+        return new Teacher(source.getId(), source.getFullName(), lessonsId);
     }
 }

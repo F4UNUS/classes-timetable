@@ -1,4 +1,5 @@
 package ru.rsreu.classes_timetable.model;
 
-public class Teacher {
-}
+public record Teacher(
+        String fullName
+) { }

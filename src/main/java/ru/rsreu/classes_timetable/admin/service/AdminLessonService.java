@@ -56,7 +56,7 @@ public class AdminLessonService {
         updatableLesson.setAuditory(newLesson.getAuditory());
         updatableLesson.setDayOfWeek(newLesson.getDayOfWeek());
         updatableLesson.setStudentsCount(newLesson.getStudentsCount());
-        updatableLesson.setTeachers(newLesson.getTeachers());
+        updatableLesson.setTeacher(newLesson.getTeacher());
         lessonRepository.save(updatableLesson);
     }
 

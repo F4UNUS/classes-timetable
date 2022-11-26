@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class TeacherEntity {
     @Column(name = "full_name")
     private String fullName;
 
-    @ManyToMany
+    @OneToMany
     @JoinTable(
             name = "teacher_lesson",
             joinColumns = @JoinColumn(name = "teacher_id"),

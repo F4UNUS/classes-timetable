@@ -4,23 +4,24 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import ru.rsreu.classes_timetable.admin.model.Lesson;
 import ru.rsreu.classes_timetable.db.entity.LessonEntity;
-import ru.rsreu.classes_timetable.db.entity.TeacherEntity;
 
-import java.util.List;
+import java.util.Objects;
 
 @Component
 public class LessonEntityToLessonConverter implements Converter<LessonEntity, Lesson> {
 
     @Override
     public Lesson convert(LessonEntity source) {
-        List<Long> teachersIds = source.getTeachers().stream()
-                .map(TeacherEntity::getId)
-                .toList();
+        Long teacherId = null;
+        if (Objects.nonNull(source.getTeacher())) {
+            teacherId = source.getTeacher().getId();
+        }
         return new Lesson(source.getId(),
                 source.getName(),
                 source.getAuditory(),
                 source.getDayOfWeek(),
-                teachersIds,
-                source.getStudentsCount());
+                source.getTime(),
+                source.getStudentsCount(),
+                teacherId);
     }
 }
